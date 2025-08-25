@@ -8,12 +8,6 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/dl-archive.alpinelinux.org/g' /etc/apk/repo
 # Install some old packages without pinning exact versions
 RUN apk add --no-cache bash curl openssl wget
 
-#RUN apk add --no-cache \
-    bash=4.3.48-r1 \
-    openssl=1.0.2m-r1 \
-    curl=7.61.1-r2 \
-    wget=1.19.5-r0
-
 # Add a deliberately weak config
 RUN echo 'root:root' | chpasswd
 
