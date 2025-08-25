@@ -1,15 +1,14 @@
 name: Container Scan
-#on:
- # push:
-  #  branches: [ master ]
-  #pull_request:
-   # branches: [ master ]
 on:
-  workflow_run:
-    workflows: [ "Build Vulnerable Docker Image" ]
-    types:
-      - completed
-
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+#on:
+ # workflow_run:
+  #  workflows: [ "Build Vulnerable Docker Image" ]
+   # types:
+    #  - completed
 jobs:
   image-scan:
     runs-on: ubuntu-latest
