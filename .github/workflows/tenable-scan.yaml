@@ -1,0 +1,8 @@
+    steps:
+    - uses: actions/checkout@v3
+    - name: Scan container image with Tenable Cloud Security
+      uses: tenable/cloud-security-actions/container-image/scan@v1
+      with:
+        api-token: ${{ secrets.TENABLE_API_TOKEN }}
+        api-url: https://uk.app.ermetic.com
+        name: vuln-docker
